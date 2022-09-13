@@ -31,4 +31,35 @@ function findIndex (index: number, array: number[]): number {
 //console.log(findIndex(1, numberOfStudents))
 
 let finalNumber = findIndex(1, numberOfStudents)
-console.log(finalNumber + 1)
+//console.log(finalNumber + 1)
+
+function log(msg: string | number): void {
+  console.log(msg)
+}
+
+let finalNumber2 = findIndex(1, numberOfStudents)
+//log(finalNumber2 + 1)
+
+// const complexObject: any = {name: 'steph', height: "5'3"}
+// console.log(complexObject)
+
+// self documenting code (interface)
+interface Human {
+  name: string,
+  height: string
+}
+
+interface Teacher extends Human{
+  age: number
+  weight?: string     // ? = optional
+}
+
+
+const complexObject: Teacher = {name: 'steph', height: "5'3", age: 31}
+
+function displayTeacher(teacher: Teacher): string {
+  return `this teacher is ${teacher.age} years old`
+}
+
+console.log(displayTeacher(complexObject))
+
